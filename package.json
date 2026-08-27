@@ -4,13 +4,14 @@
   "description": "Full-stack AI application powered by React, Tailwind CSS, Node.js/Express, Supabase, and Google Gemini API",
   "private": true,
   "scripts": {
+    "postinstall": "npm install --prefix client",
     "install:all": "npm install && npm install --prefix server && npm install --prefix client",
     "dev:server": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client",
     "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,cyan\" \"npm run dev:server\" \"npm run dev:client\"",
     "build:client": "npm run build --prefix client",
     "build:server": "npm run build --prefix server",
-    "build": "npm run build:server && npm run build:client"
+    "build": "npm run build:client"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
